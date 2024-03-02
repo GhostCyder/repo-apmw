@@ -2,21 +2,122 @@
 <html lang="pt">
 <head> 
     <style>
-    selector { color: red;}
-  </style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Light gray */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #87ceeb; /* Sky blue */
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #1e90ff; /* Dodger blue */
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff; /* White */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        footer {
+            background-color: #87ceeb; /* Sky blue */
+            color: #fff; /* White */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 20px; /* Add padding to align GIFs properly */
+        }
+        .gif-container img {
+            max-width: 45%; /* Limit the width of each GIF */
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top1SitesDaWeb</title>
 </head>
 <body>
-    <body style="background-color:#FBEAEB"></body>
     <h1 style="color:#2F3C7E;">Francisco Silveira</h1>
-    <p style="color:#2F3C7E;">Nasceu na ilha Terceira em 22 de junho de 1997.</p>
-    <p style="color:#2F3C7E;">Antes de entrar em VAM, esteve em engenharia informática em Coimbra.</p>
-    <p style="color:#2F3C7E;">Gosta de corrida e montanhismo (também de uns finos e uma boa jantarada).</p>
-    <div style="text-align: center;">
-      <img width="500" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnlrc29uYmlndGtoMWZwN3djaHFtOGJ6ZDdzcWgyazE2a3R5ZWp5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif">
-    </div>
     
+    <header>
+      <h1>Bem vindo ao top 1 website da web</h1>
+      <nav>
+          <ul>
+              <li><a href="#about">Info</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+  
+  <section id="about">
+      <h2>Acerca de mim:</h2>
+      <p style="color:#2F3C7E;">Nasceu na ilha Terceira em 22 de junho de 1997.</p>
+      <p style="color:#2F3C7E;">Antes de entrar em VAM, esteve em engenharia informática em Coimbra.</p>
+      <p style="color:#2F3C7E;">Gosta de corrida e montanhismo (também de uns finos e uma boa jantarada).</p>
+  </section>
+  
+  <section id="services">
+      <h2>Serviços</h2>
+      <ul>
+          <li>GIFs de gatos</li>
+          <li>Queixar de sono</li>
+          <li>Queixar de ter fome</li>
+      </ul>
+  </section>
+  
+  <section id="contact">
+      <h2>Não me contate se faz favor...</h2>
+      <form action="#" method="post">
+          <label for="name">Nome:</label><br>
+          <input type="text" id="name" name="name"><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"><br>
+          <label for="message">Mensagem:</label><br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+          <input type="submit" value="Submit">
+      </form>
+  </section>
+  <footer>
+      <p>&copy; 2024 ClaramenteNãoÉUmWebsiteDePhishing. Todos os direitos reservados.</p>
+  </footer>
+ <!-- Inserting GIFs at the bottom -->
+ <div class="gif-container">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnlrc29uYmlndGtoMWZwN3djaHFtOGJ6ZDdzcWgyazE2a3R5ZWp5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" style="align-self: center;" alt="CatGIF1">
+  <img src="https://i.giphy.com/GeimqsH0TLDt4tScGw.webp" style="align-self: center;" alt="CatGIF2">
+</div>
+
+<script>
+  function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
