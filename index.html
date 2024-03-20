@@ -1,127 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head> 
-    <style>
-       body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9; 
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #87ceeb; 
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #1e90ff;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff; 
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        }
-        footer {
-            background-color: #87ceeb; 
-            color: #fff; 
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .gif-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding: 0 20px; 
-        }
-        .gif-container img {
-            max-width: 45%; 
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top1SitesDaWeb</title>
+    <style>
+      
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes flip {
+            0%, 80% {
+                transform: rotateY(360deg);
+            }
+            
+        }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9; 
+    color: #333;
+    line-height: 1.6;
+    position: relative; /* Added for positioning the audio player */
+    overflow-x: hidden; /* Added to prevent horizontal scroll */
+}
+
+header {
+    background-color: #87ceeb; 
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Added transition for color */
+}
+
+nav ul li a:hover {
+    color: #1e90ff; /* Changed color on hover */
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+h1, h2 {
+    color: #2F3C7E;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #2F3C7E;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.gif-container img {
+    width: 45%; 
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gif-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Audio player styling */
+audio {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .gif-container img {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: #87ceeb; 
+    color: #fff; 
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    clear: both; /* Added to ensure footer clears both floated and non-floated content */
+}
+header h1 span {
+            display: inline-block;
+            animation: flip 6s infinite;
+            animation-delay: calc(.2s * var(--index))
+        }
+
+    </style>
 </head>
 <body>
-    <h1 style="color:#2F3C7E;">Francisco Silveira</h1>
-    
-    <header>
-      <h1>Bem vindo ao top 1 website da web</h1>
-      <nav>
-          <ul>
-              <li><a href="#about">Info</a></li>
-              <li><a href="#services">Serviços</a></li>
-              <li><a href="#contact">Contato</a></li>
-          </ul>
-      </nav>
-  </header>
-  
-  <section id="about">
-      <h2>Acerca de mim:</h2>
-      <p style="color:#2F3C7E;">Nasceu na ilha Terceira em 22 de junho de 1997.</p>
-      <p style="color:#2F3C7E;">Antes de entrar em VAM, esteve em engenharia informática em Coimbra.</p>
-      <p style="color:#2F3C7E;">Gosta de corrida e montanhismo (também de uns finos e uma boa jantarada).</p>
-  </section>
-  
-  <section id="services">
-      <h2>Serviços</h2>
-      <ul>
-          <li>GIFs de gatos</li>
-          <li>Queixar de sono</li>
-          <li>Queixar de ter fome</li>
-      </ul>
-  </section>
-  
-  <section id="contact">
-      <h2>Não me contate se faz favor...</h2>
-      <form action="#" method="post">
-          <label for="name">Nome:</label><br>
-          <input type="text" id="name" name="name"><br>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email"><br>
-          <label for="message">Mensagem:</label><br>
-          <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
-          <input type="submit" value="Submit">
-      </form>
-  </section>
-  <footer>
-      <p>&copy; 2024 ClaramenteNãoÉUmWebsiteDePhishing. Todos os direitos reservados.</p>
-  </footer>
- 
- <div class="gif-container">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnlrc29uYmlndGtoMWZwN3djaHFtOGJ6ZDdzcWgyazE2a3R5ZWp5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" style="align-self: center;" alt="CatGIF1">
-  <img src="https://i.giphy.com/GeimqsH0TLDt4tScGw.webp" style="align-self: center;" alt="CatGIF2">
-</div>
+    <audio controls autoplay loop>
+        <source src="elevator_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<script>
-  function scrollToSection(sectionId) {
-      var section = document.getElementById(sectionId);
-      section.scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
-<audio controls autoplay loop>
-  <source src="elevator_music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+    <header>
+        <h1>
+            <span style="--index: 1;">B</span><span style="--index: 2;">e</span><span style="--index: 3;">m</span> 
+            <span style="--index: 4;">v</span><span style="--index: 5;">i</span><span style="--index: 6;">n</span><span style="--index: 7;">d</span><span style="--index: 8;">o</span> 
+            <span style="--index: 9;">a</span><span style="--index: 10;">o</span>
+            <span style="--index: 11;">t</span><span style="--index: 12;">o</span><span style="--index: 13;">p</span> 
+            <span style="--index: 14;">1</span> 
+            <span style="--index: 15;">w</span><span style="--index: 16;">e</span><span style="--index: 17;">b</span><span style="--index: 18;">s</span><span style="--index: 19;">i</span><span style="--index: 20;">t</span><span style="--index: 21;">e</span><span style="--index: 22;">s</span>
+            <span style="--index: 23;">d</span><span style="--index: 24;">a</span> 
+            <span style="--index: 25;">w</span><span style="--index: 26;">e</span><span style="--index: 27;">b</span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Info</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>Acerca de mim:</h2>
+        <p>Nasci na ilha Terceira em 22 de junho de 1997.</p>
+        <p>Antes de entrar em VAM, estive em engenharia informática em Coimbra.</p>
+        <p>Gosto de corrida e montanhismo (também de uns finos e uma boa jantarada).</p>
+    </section>
+    
+    <section id="services">
+        <h2>Serviços</h2>
+        <ul>
+            <li>GIFs de gatos</li>
+            <li>Queixar de sono</li>
+            <li>Queixar de ter fome</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Não me contate por favor...</h2>
+        <form action="#" method="post">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Enviar" onclick="redirectToWebsite(event)"> (Do not press.)
+        </form>
+    </section>
+
+    <div class="gif-container">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnlrc29uYmlndGtoMWZwN3djaHFtOGJ6ZDdzcWgyazE2a3R5ZWp5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" alt="CatGIF1">
+        <img src="https://i.giphy.com/GeimqsH0TLDt4tScGw.webp" alt="CatGIF2">
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 ClaramenteNãoÉUmWebsiteDePhishing. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+       function redirectToWebsite(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            window.location.href = "https://tenor.com/search/cats-gifs"; // Replace "https://example.com" with your desired URL
+        }
+    </script>
 </body>
 </html>
+
